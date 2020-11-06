@@ -42,14 +42,18 @@ class Engine:
 		else:
 			return
 
+	def prettify(self, dict):
+		for title, ratio in dict.items():
+			print(title,":", ratio)
+
+
 if __name__ == "__main__":
 	q = input("Which stock do you want to get?: ")
 	print("Getting informations..")
 	x = Engine(q)
 
 	output = x.out()
-	
-	print(output) 
+	x.prettify(output)
 	
 
 
