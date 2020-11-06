@@ -15,14 +15,14 @@ class Engine:
 
 	def run(self):
 		try:
-			self.page = req.get(self.url)
-			self.soup = bs(self.page.content, "html.parser")
+			page = req.get(self.url)
+			soup = bs(page.content, "html.parser")
 
-			self.results = self.soup.find(id = "ozetFinansalGostergeler1")
-			self.isim = self.soup.find(class_ = "share-title").text
+			results = soup.find(id = "ozetFinansalGostergeler1")
+			isim = soup.find(class_ = "share-title").text
 
-			self.title = self.results.find_all("th") # Getting all titles financial ratios
-			self.ratio = self.results.find_all("td") # Getting all ratios of ticker
+			self.title = results.find_all("th") # Getting all titles financial ratios
+			self.ratio = results.find_all("td") # Getting all ratios of ticker
 		
 		except:
 			print(f"No stock found named {self.ticker}")
@@ -44,6 +44,7 @@ class Engine:
 
 if __name__ == "__main__":
 	q = input("Which stock do you want to get?: ")
+	print("Getting informations..")
 	x = Engine(q)
 
 	output = x.out()
