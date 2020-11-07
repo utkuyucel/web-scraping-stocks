@@ -44,7 +44,10 @@ class Engine:
 
 	def prettify(self, dict):
 		for title, ratio in dict.items():
+			print("-----------------------")
 			print(title,":", ratio)
+
+		print("-----------------------")
 
 
 if __name__ == "__main__":
