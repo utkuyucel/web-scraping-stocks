@@ -42,10 +42,10 @@ class Engine:
 		else:
 			return
 
-	def prettify(self, dict):
+	def prettify(self, dict): 
 		for title, ratio in dict.items():
 			print("-----------------------")
-			print(title,":", ratio)
+			print(title,":", ratio) #Returns nothing, just prettifying the outpu dictionary
 
 		print("-----------------------")
 
