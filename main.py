@@ -43,12 +43,15 @@ class Engine:
 			return
 
 	def prettify(self, dict): 
-		for title, ratio in dict.items():
+		try:
+			for title, ratio in dict.items():
+				print("-----------------------")
+				print(title,":", ratio) #Returns nothing, just prettifying the outpu dictionary
+
 			print("-----------------------")
-			print(title,":", ratio) #Returns nothing, just prettifying the outpu dictionary
 
-		print("-----------------------")
-
+		except:
+			return
 
 if __name__ == "__main__":
 	q = input("Which stock do you want to get?: ")
